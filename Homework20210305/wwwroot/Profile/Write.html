@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .label-bold {
+            font-weight: bold;
+            margin: 10px 0px;
+            /*display:block;*/
+        }
+        #input-file{
+
+        }
+        .input-group-addon{
+            width:1%;
+            white-space:nowrap;
+            vertical-align:middle;
+            background-color:lightgray;
+        }
+        .input-group-addon:last-child{
+            border-top-right-radius:5px;
+            border-bottom-right-radius:5px;
+        }
+        .input-group select,span{
+            margin:0px;
+            padding:0;
+        }
+
+        .hierarchy-2{
+            margin:5px 0;
+        }
+        
+        .input-group{
+            margin-top:5px;
+        }
+    </style>
+</head>
+<body>
+    <div style="width:500px;">
+        <h2>个人资料</h2>
+        <form>
+            <div class="hierarchy-2">
+                <label class="label-bold">头像：（* 仅限jpg/png/gif）</label>
+                <div>
+                    <div style="width:80px; height:80px;">
+                        <img src="../images/人员.png" style="height:100%;"/>
+                    </div>
+                    <input type="text" placeholder="页面提交时上传文件"/>
+                    <input type="file" id="input-file" value="浏览"/>
+                </div>
+            </div>
+            <div class="hierarchy-2">
+                <label class="label-bold">性别：</label>
+                <label><input type="radio" />男</label>
+                <label><input type="radio" />女</label>
+            </div>
+            <div class="hierarchy-2">
+                <label class="label-bold">生日：</label>
+                <div class="input-group">
+                    <select>
+                        <option>---</option>
+                        <option>2010</option>
+                        <option>2009</option>
+                        <option>2008</option>
+                        <option>2007</option>
+                        <option>2006</option>
+                        <option>2005</option>
+                        <option>2004</option>
+                        <option>2003</option>
+                        <option>2002</option>
+                        <option>2001</option>
+                        <option>2000</option>
+                        <option>1999</option>
+                        <option>1998</option>
+                        <option>1997</option>
+                        <option>1996</option>
+                        <option>1995</option>
+                        <option>1994</option>
+                        <option>1993</option>
+                        <option>1992</option>
+                        <option>1991</option>
+                        <option>1990</option>
+                    </select>
+                    <span class="input-group-addon">年</span>
+                    <select>
+                        <option>---</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                    </select>
+                    <span class="input-group-addon">月</span>
+                    <select>
+                        <option>---</option>
+                        <option>白羊座</option>
+                        <option>金牛座</option>
+                        <option>双子座</option>
+                        <option>巨蟹座</option>
+                        <option>狮子座</option>
+                        <option>处女座</option>
+                        <option>天秤座</option>
+                        <option>天蝎座</option>
+                        <option>射手座</option>
+                        <option>摩羯座</option>
+                        <option>水瓶座</option>
+                        <option>双鱼座</option>
+                    </select>
+                    <span class="input-group-addon">星座</span>
+                </div>
+            </div>
+            <div class="hierarchy-2">
+                <label class="label-bold">关键字：（* 使用空格分隔）</label>
+                <div class="input-group">
+                    <select>
+                        <option>---一级---</option>
+                    </select>
+                    <button>▼</button>
+                    <select>
+                        <option>---二级---</option>
+                    </select>
+                    <button>▼</button>
+                    <input type="text" placeholder="自定义关键字，使用空格分隔"/>
+                </div>
+            </div>
+            <div class="hierarchy-2">
+                <label class="label-bold">自我介绍：</label>
+                <br />
+                <textarea rows="5" style="width:60%; border-radius:5px; border-color:lightgray; margin-top:10px;" placeholder ="简单的介绍一下自己吧，不超过255字"></textarea>
+            </div>
+            <input type="submit"  style="background-color:dodgerblue; height:30px; width:50px; color:white; border:none; margin:10px 0px;"/>
+        </form>
+    </div>
+</body>
+</html>

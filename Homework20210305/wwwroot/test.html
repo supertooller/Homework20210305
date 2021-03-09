@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #pseudo-class-hover:hover{
+            color:white;
+        }
+        #pseudo-class-demo:link {
+            text-decoration-line: none;
+            color: red;
+        }
+
+        #pseudo-class-demo:active {
+            color: green;
+        }
+        
+        #little-triangle{
+            width:0px;
+            border-top:10px red solid;
+            border-right:10px solid transparent;
+            border-bottom:10px solid transparent;
+            border-left:10px solid transparent;
+        }
+
+        #testtable1{
+            border-collapse:collapse;
+            border-bottom:1px solid;
+        }
+        #testtable1 th,td{
+            border-top:1px solid;
+        }
+    </style>
+</head>
+<body>
+    <div style="width:50%;"><!--使用不同的submit按钮达到向不同页面传送数据-->
+        <form>
+            <h3>畅言：</h3>
+            <!--<input type="text" name="畅言" style="width:100%;height:500px;border-radius:10px;"/>-->
+            <textarea cols="20" name="畅言" style="width:100%;height:300px;border-radius:10px;"></textarea>
+            <div style="margin-top:30px;">
+                <input type="submit" value="发布" formaction="/" style="float:left;" />
+                <input type="submit" value="保存草稿" formaction="/test.html" style="float:right;" />
+            </div>
+            <br />
+            <h2 id="pseudo-class-hover">伪类演示-hover</h2>
+            <br />
+            <a id="pseudo-class-demo" href="test.html">伪类演示</a>
+
+        </form>
+    </div>
+    <div style="margin:10px;"><!--小三角形-->
+        <div id="little-triangle"></div>
+    </div>
+    <div><!--表格边框合并collapse-->
+        <div>
+            <table id="testtable1">
+                <thead>哈哈哈</thead>
+                <tbody>
+                    <tr>
+                        <th>第一列</th>
+                        <th>第二列</th>
+                    </tr>
+                    <tr>
+                        <td>row 1,col 1</td>
+                        <td>row 1,col 2</td>
+                    </tr>
+                    <tr>
+                        <td>row 2,col 1</td>
+                        <td>row 2,col 2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
