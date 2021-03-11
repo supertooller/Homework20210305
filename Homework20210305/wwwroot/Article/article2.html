@@ -1,0 +1,881 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width; initial-scale=1; shrink-to-fit=no" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+
+    <!--<link rel="shortcut icon" type="image/x-icon" href="/images/logo-big.ico" media="screen" /> -->
+    <link rel="stylesheet" href="/css/font-awesome.css" />
+    <style>
+        nav {
+            
+            height: 100px;
+        }
+
+        #nav-div-1 {
+
+        }
+
+        @media(min-width: 768px) {
+            .navbar-nav > li {
+                
+            }
+        }
+
+        .navbar-nav > li {
+            margin-right: 10px;
+        }
+
+        .content-meta {
+            margin-bottom:10px;
+            padding-bottom: 30px;
+            border-bottom: 1px dashed #ccc;
+        }
+
+        @media(min-width:992px)
+        {
+            .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12{
+                float:left;
+            }
+        }
+
+        .badge {
+            display: inline-block;
+            min-width: 10px;
+            padding: 3px 7px;
+            font-size: 12px;
+            font-weight: bold;
+            line-height: 1;
+            color: #fff;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            background-color: #777;
+            border-radius: 10px;
+        }
+
+
+        .user-tags span {
+            margin: 5px 20px 5px 0;
+            word-break: keep-all !important;
+        }
+
+        .meta-interaction a{
+            margin-left:10px;
+        }
+        .text-interaction{
+            color:#777;
+        }
+
+        .content-left content-meta h4 {
+            margin: 10px 0;
+        }
+
+        .content-left, #nav-page {
+            /*此处是为了左边文章内容和分页组件空白处背景色一致*/
+            background-color: white;
+        }
+
+        .widget {
+            border: 1px dashed #eee;
+            padding: 15px;
+            margin-bottom: 30px;
+            word-break: break-all;
+            background-color: #fff;
+        }
+
+        .input-group-addon:last-child {
+            border-left: 0;
+            text-align:center;
+        }
+
+        .input-group-addon {
+            padding: 6px 12px;
+            font-size: 14px;
+            font-weight: normal;
+            line-height: 1;
+            color: #555;
+            text-align: center;
+            background-color: #eee;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .input-group-addon, .input-group-btn {
+            /*width: 1%;*/
+            white-space: nowrap;
+            vertical-align: middle;
+            text-align:center;
+        }
+
+        .input-group-addon:last-child{
+            border-bottom-left-radius:0;
+            border-top-left-radius:0;
+        }
+
+        #aside-second li{
+            list-style:none;
+        }
+
+        #aside-second>ul>li{
+            
+            padding:0px 5px;
+            text-align:center;
+        }
+
+            /*#aside-second > ul > li:hover{
+            border-bottom:none;
+        }*/
+
+
+
+        #aside-second >ul>li input:checked + .simulate-border{
+            border-bottom:none;
+        }
+
+        .simulate-border {
+            /* 尺寸自适应容器大小，假装是容器 */
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            /* 在输入框的下面 */
+            z-index: 1;
+            /* 外观模拟 */
+            border: 1px dashed #ccc;
+            border-radius: 5px;
+        }
+
+        .radio-change input[type=radio]{
+            display:none;
+        }
+
+        .rank-num {
+            display:inline-block;
+            background-color: gray;
+            width: 25px;
+            height:25px;
+            border-radius: 2px;
+            text-align: center;
+            color:white;
+        }
+
+        .rank-menber a {
+            padding-right: 50px;
+            text-decoration-line: none;
+        }
+
+        #aside-second {
+            border-style: solid;
+            border-color: lightgray;
+            border-width: 1px;
+            border-radius: 5px;
+        }
+        .rank-menber tr{
+        }
+
+        .rank-menber table td {
+            height:30px;
+            padding-left:20px;
+        }
+
+        #aside-first,#aside-third {
+            padding: 10px;
+            border: 1px dashed #ccc;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-dedault navbar-light" style="background-color:lightgray;">
+        <div class="container col-10">
+            <div>
+                <a href="/index.html" class="container-brand">
+                    <img src="/images/logo-big.ico" />
+                </a>
+                <p class="navbar-text">
+                    <span style="font-size:18px; font-weight:bold;">一起帮</span>
+                    <span>· 网络互助平台</span>
+                </p>
+                <a>
+                    <span class="fa fa-bell"></span>
+                </a>
+            </div>
+            
+            <ul class="navbar-right navbar-nav" style="list-style:none;  flex-direction:row;">
+                <li class="dropdown">
+                    <a class="dropdown-toggle-split">
+                        <span class="fa fa-question-circle"></span>
+                        求助
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a>
+                        <span class="fa fa-eye"></span>
+                        督促
+                    </a>
+                </li>
+                <li class="dropdown open">
+                    <a aria-expanded="true">
+                        <span class="fa fa-newspaper-o"></span>
+                    </a>
+                    文章
+                    <ul class="dropdown-menu" role="menu">
+                        <li>
+                            <a href="/">
+                                <span class="fa fa-list fa-fw"></span>
+                                列表
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/">
+                                <span class="fa fa-folder-open fa-fw"></span>
+                            </a>
+                            开通
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a>
+                        <span class="fa fa-user-circle"></span>
+                    </a>
+                    用户
+                </li>
+                <li class="dropdown">
+                    <a>
+                        <span class="fa fa-tachometer"></span>
+                    </a>
+                    后台
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main class="container body-content">
+        <div class="content-left col-md-8">
+            <div class="content-meta">
+                <div class="mata-top">
+                    <small class="text-muted">
+                        <span class="fa fa-calendar"></span>
+                        <span> 2021年03月07日 12点14分</span>
+                    </small>
+                    <span class="pull-right">
+                        作者：<a href="/">叶飞</a>
+                    </span>
+                </div>
+                <h4 class="article-title"><a href="/">二进制：存储 / 运算 / 字符编码 / 图像格式和压缩</a></h4>
+                <p>
+                    计算机不是用来上网聊天打游戏的么？和计算有啥关系？我们要认识到：计算机除了计算，还可以进行存储（文字/图片/音视频……），这也是计算机时代为什么被称之为信息时代的原因计算机除了数值计算，还可以进行逻辑计算。以上两点，也就是计算器和计算机的区别。聪明如你，其实就应该想到了：本质上来说，程序就包含两部分内容：数据：数值、文本、图像……指令：再哪里拿到数据，如何处理数据……以用户登录为例：数据：当前用户输入的，和数据库里保存着的：用户名和密码指令：将用户输入和数据库存储进行比较，如果相符，就……；否则，就……上
+                    <a href="/" data-original-title="全文">......</a>
+                </p>
+                <div>
+                    <label>
+                        <span class="fa fa-tags"></span>关键字：
+                    </label>
+                    <span class="badge">二进制</span>
+                    <span class="badge">图像</span>
+                    <span class="badge">门电路</span>
+                </div>
+                <div class="pull-right meta-interaction">
+                    <a href="/" class="text-interaction">
+                        <span class="fa fa-comments-o"></span>
+                        评论：0
+                    </a>
+                    <a href="/" class="text-interaction">
+                        <span class="fa fa-thumbs-o-up"></span>
+                        赞：0
+                    </a>
+                    <a href="/" class="text-interaction">
+                        <span class="fa fa-thumbs-o-down"></span>
+                        踩：0
+                    </a>
+                </div>
+            </div>
+
+            <div class="content-meta">
+                <div class="mata-top">
+                    <small class="text-muted">
+                        <span class="fa fa-calendar"></span>
+                        <span>2021年03月06日 20点47分 </span>
+                    </small>
+                    <span class="pull-right">
+                        作者：<a href="/">叶飞</a>
+                    </span>
+                </div>
+                <h4 class="article-title"><a href="/">冯·洛伊曼结构：图灵机实现 / 加块内存条 / 缓存和缓冲 / 软硬件分离</a></h4>
+                <p>
+                    计算机就像一把机关枪 给之前我们学习过的计算机硬件归一个类：输入（Input）/输出（Output）：鼠标/键盘，屏幕 运算：CPU/GPU存储：内存/外存（硬盘/U盘）/显存这就构成了经典的冯·诺依曼体系结构（被几乎现代所有的计算机普遍使用），如下图所示：整个计算机以CPU为核心。程序的执行过程实际上是CPU不断地从存储器中读取内容（指令和数据）并予以执行的过程。CPU就像：流水线的工人机关枪的击发器不停的工作。图灵机 冯·洛伊曼结构计算机其实是图灵机的实现。图灵机是对带有可执行程序的可工作计算机的一
+                    <a href="/" data-original-title="全文">......</a>
+                </p>
+                <div>
+                    <label>
+                        <span class="fa fa-tags"></span>关键字：
+                    </label>
+                    <span class="badge">冯·洛伊曼</span>
+                    <span class="badge">内存</span>
+                    <span class="badge">缓存</span>
+                    <span class="badge">缓冲</span>
+                </div>
+                <div class="pull-right meta-interaction">
+                    <a href="/" class="text-interaction">
+                        <span class="fa fa-comments-o"></span>
+                        评论：0
+                    </a>
+                    <a href="/" class="text-interaction">
+                        <span class="fa fa-thumbs-o-up"></span>
+                        赞：0
+                    </a>
+                    <a href="/" class="text-interaction">
+                        <span class="fa fa-thumbs-o-down"></span>
+                        踩：0
+                    </a>
+                </div>
+            </div>
+
+            <div class="content-meta">
+                <div class="mata-top">
+                    <small class="text-muted">
+                        <span class="fa fa-calendar"></span>
+                        <span>2021年03月04日 09点18分 </span>
+                    </small>
+                    <span class="pull-right">
+                        作者：<a href="/">叶飞</a>
+                    </span>
+                </div>
+                <h4 class="article-title"><a href="/">浏览器大战</a></h4>
+                <p>
+                    google崛起APP：互联网孤岛
+                    <a href="/" data-original-title="全文">......</a>
+                </p>
+                <div>
+                    <label>
+                        <span class="fa fa-tags"></span>关键字：
+                    </label>
+                    <span class="badge">浏览器</span>
+                    <span class="badge">网景</span>
+                    <span class="badge">IE</span>
+                    <span class="badge">Goole</span>
+                </div>
+                <div class="pull-right meta-interaction">
+                    <a href="/" class="text-interaction">
+                        <span class="fa fa-comments-o"></span>
+                        评论：0
+                    </a>
+                    <a href="/" class="text-interaction">
+                        <span class="fa fa-thumbs-o-up"></span>
+                        赞：0
+                    </a>
+                    <a href="/" class="text-interaction">
+                        <span class="fa fa-thumbs-o-down"></span>
+                        踩：0
+                    </a>
+                </div>
+            </div>
+
+            <div class="content-meta">
+                <div class="mata-top">
+                    <small class="text-muted">
+                        <span class="fa fa-calendar"></span>
+                        <span>2021年03月04日 09点16分 </span>
+                    </small>
+                    <span class="pull-right">
+                        作者：<a href="/">叶飞</a>
+                    </span>
+                </div>
+                <h4 class="article-title"><a href="/">啊！愚蠢的人类：AI进化之路</a></h4>
+                <p>
+                    再次“图灵”
+                    <a href="/" data-original-title="全文">......</a>
+                </p>
+                <div>
+                    <label>
+                        <span class="fa fa-tags"></span>关键字：
+                    </label>
+                    <span class="badge">AI</span>
+                    <span class="badge">图灵测试</span>
+                    <span class="badge">发展历史</span>
+                </div>
+                <div class="pull-right meta-interaction">
+                    <a href="/" class="text-interaction">
+                        <span class="fa fa-comments-o"></span>
+                        评论：0
+                    </a>
+                    <a href="/" class="text-interaction">
+                        <span class="fa fa-thumbs-o-up"></span>
+                        赞：0
+                    </a>
+                    <a href="/" class="text-interaction">
+                        <span class="fa fa-thumbs-o-down"></span>
+                        踩：0
+                    </a>
+                </div>
+            </div>
+
+            <div class="content-meta">
+                <div class="mata-top">
+                    <small class="text-muted">
+                        <span class="fa fa-calendar"></span>
+                        <span>2021年03月04日 08点46分 </span>
+                    </small>
+                    <span class="pull-right">
+                        作者：<a href="/">叶飞</a>
+                    </span>
+                </div>
+                <h4 class="article-title"><a href="/">从0到1：互联网的诞生</a></h4>
+                <p>
+                    科幻：每个小孩都会发电报万维网 和 互联网1990年，蒂姆·博纳斯-李HTML 和 HTTP ：核心超链接
+                    <a href="/" data-original-title="全文">......</a>
+                </p>
+                <div>
+                    <label>
+                        <span class="fa fa-tags"></span>关键字：
+                    </label>
+                    <span class="badge">互联网</span>
+                    <span class="badge">历史</span>
+                </div>
+                <div class="pull-right meta-interaction">
+                    <a href="/" class="text-interaction">
+                        <span class="fa fa-comments-o"></span>
+                        评论：0
+                    </a>
+                    <a href="/" class="text-interaction">
+                        <span class="fa fa-thumbs-o-up"></span>
+                        赞：0
+                    </a>
+                    <a href="/" class="text-interaction">
+                        <span class="fa fa-thumbs-o-down"></span>
+                        踩：0
+                    </a>
+                </div>
+            </div>
+
+            <div class="content-meta">
+                <div class="mata-top">
+                    <small class="text-muted">
+                        <span class="fa fa-calendar"></span>
+                        <span>2021年03月04日 08点42分 </span>
+                    </small>
+                    <span class="pull-right">
+                        作者：<a href="/">叶飞</a>
+                    </span>
+                </div>
+                <h4 class="article-title"><a href="/">在美国当法官太难了！史上著名的三场诉讼</a></h4>
+                <p>
+                    两次法律诉讼IBMABC vs ENIACIE绑定windows
+                    <a href="/" data-original-title="全文">......</a>
+                </p>
+                <div>
+                    <label>
+                        <span class="fa fa-tags"></span>关键字：
+                    </label>
+                    <span class="badge">计算机</span>
+                    <span class="badge">历史</span>
+                    <span class="badge">诉讼</span>
+                </div>
+                <div class="pull-right meta-interaction">
+                    <a href="/" class="text-interaction">
+                        <span class="fa fa-comments-o"></span>
+                        评论：0
+                    </a>
+                    <a href="/" class="text-interaction">
+                        <span class="fa fa-thumbs-o-up"></span>
+                        赞：0
+                    </a>
+                    <a href="/" class="text-interaction">
+                        <span class="fa fa-thumbs-o-down"></span>
+                        踩：0
+                    </a>
+                </div>
+            </div>
+
+            <div class="content-meta">
+                <div class="mata-top">
+                    <small class="text-muted">
+                        <span class="fa fa-calendar"></span>
+                        <span>2021年03月04日 08点39分 </span>
+                    </small>
+                    <span class="pull-right">
+                        作者：<a href="/">叶飞</a>
+                    </span>
+                </div>
+                <h4 class="article-title"><a href="/">理想主义的旗帜迎风飘扬：改变世界的开源运动</a></h4>
+                <p>
+                    开源理查德·斯托曼 1970年 MITApache
+                    <a href="/" data-original-title="全文">......</a>
+                </p>
+                <div>
+                    <label>
+                        <span class="fa fa-tags"></span>关键字：
+                    </label>
+                    <span class="badge">开源</span>
+                    <span class="badge">历史</span>
+                    <span class="badge">运动</span>
+                    <span class="badge">影响</span>
+                </div>
+                <div class="pull-right meta-interaction">
+                    <a href="/" class="text-interaction">
+                        <span class="fa fa-comments-o"></span>
+                        评论：0
+                    </a>
+                    <a href="/" class="text-interaction">
+                        <span class="fa fa-thumbs-o-up"></span>
+                        赞：0
+                    </a>
+                    <a href="/" class="text-interaction">
+                        <span class="fa fa-thumbs-o-down"></span>
+                        踩：0
+                    </a>
+                </div>
+            </div>
+
+            <div class="content-meta">
+                <div class="mata-top">
+                    <small class="text-muted">
+                        <span class="fa fa-calendar"></span>
+                        <span>2021年03月04日 08点35分 </span>
+                    </small>
+                    <span class="pull-right">
+                        作者：<a href="/">叶飞</a>
+                    </span>
+                </div>
+                <h4 class="article-title"><a href="/">不朽的经典：《人月神话》</a></h4>
+                <p>
+                    在计算机技术日新月异1971年出版的《人月神话》
+                    <a href="/" data-original-title="全文">......</a>
+                </p>
+                <div>
+                    <label>
+                        <span class="fa fa-tags"></span>关键字：
+                    </label>
+                    <span class="badge">人月神话</span>
+                    <span class="badge">软件工程</span>
+                    <span class="badge">企业级应用</span>
+                </div>
+                <div class="pull-right meta-interaction">
+                    <a href="/" class="text-interaction">
+                        <span class="fa fa-comments-o"></span>
+                        评论：0
+                    </a>
+                    <a href="/" class="text-interaction">
+                        <span class="fa fa-thumbs-o-up"></span>
+                        赞：0
+                    </a>
+                    <a href="/" class="text-interaction">
+                        <span class="fa fa-thumbs-o-down"></span>
+                        踩：0
+                    </a>
+                </div>
+            </div>
+
+            <div class="content-meta">
+                <div class="mata-top">
+                    <small class="text-muted">
+                        <span class="fa fa-calendar"></span>
+                        <span>2021年03月04日 08点33分 </span>
+                    </small>
+                    <span class="pull-right">
+                        作者：<a href="/">叶飞</a>
+                    </span>
+                </div>
+                <h4 class="article-title"><a href="/">苹果和图灵：他用死问了人间一个问题：什么是罪？</a></h4>
+                <p>
+                    图灵和苹果图灵是很牛的。（复习：图灵机 / 图灵完备性 / 图灵测试 / 图灵奖……） 苹果也经常和很牛逼的人联系在一起，比如：牛顿。还有乔布斯：但为什么这苹果有一个缺口，像不像被人咬了一口？大家都知道的童话：白雪公主和七个小矮人你可能不知道的：1954年6月7日，图灵吃下含有氰化物的苹果中毒身亡，享年41岁。为什么？1952年，英国政府对图灵的同性恋取向定罪，随后图灵接受化学阉割（雌激素注射）2013年12月24日，在英国司法大臣克里斯·格雷灵的要求下，英国女王伊丽莎白二世向图灵颁发了皇家赦免人物生平全
+                    <a href="/" data-original-title="全文">......</a>
+                </p>
+                <div>
+                    <label>
+                        <span class="fa fa-tags"></span>关键字：
+                    </label>
+                    <span class="badge">图灵</span>
+                    <span class="badge">iphone</span>
+                    <span class="badge">苹果</span>
+                    <span class="badge">同性恋</span>
+                    <span class="badge">计算机</span>
+                </div>
+                <div class="pull-right meta-interaction">
+                    <a href="/" class="text-interaction">
+                        <span class="fa fa-comments-o"></span>
+                        评论：0
+                    </a>
+                    <a href="/" class="text-interaction">
+                        <span class="fa fa-thumbs-o-up"></span>
+                        赞：0
+                    </a>
+                    <a href="/" class="text-interaction">
+                        <span class="fa fa-thumbs-o-down"></span>
+                        踩：0
+                    </a>
+                </div>
+            </div>
+
+            <div class="content-meta">
+                <div class="mata-top">
+                    <small class="text-muted">
+                        <span class="fa fa-calendar"></span>
+                        <span>2021年03月04日 08点30分 </span>
+                    </small>
+                    <span class="pull-right">
+                        作者：<a href="/">叶飞</a>
+                    </span>
+                </div>
+                <h4 class="article-title"><a href="/">最早的计算机，最初的程序员</a></h4>
+                <p>
+                    图灵和苹果图灵是很牛的。（复习：图灵机 / 图灵完备性 / 图灵测试 / 图灵奖……） 苹果也经常和很牛逼的人联系在一起，比如：牛顿。还有乔布斯：但为什么这苹果有一个缺口，像不像被人咬了一口？大家都知道的童话：白雪公主和七个小矮人你可能不知道的：1954年6月7日，图灵吃下含有氰化物的苹果中毒身亡，享年41岁。为什么？1952年，英国政府对图灵的同性恋取向定罪，随后图灵接受化学阉割（雌激素注射）2013年12月24日，在英国司法大臣克里斯·格雷灵的要求下，英国女王伊丽莎白二世向图灵颁发了皇家赦免人物生平全
+                    <a href="/" data-original-title="全文">......</a>
+                </p>
+                <div>
+                    <label>
+                        <span class="fa fa-tags"></span>关键字：
+                    </label>
+                    <span class="badge">计算机</span>
+                    <span class="badge">历史</span>
+                    <span class="badge">定义</span>
+                </div>
+                <div class="pull-right meta-interaction">
+                    <a href="/" class="text-interaction">
+                        <span class="fa fa-comments-o"></span>
+                        评论：0
+                    </a>
+                    <a href="/" class="text-interaction">
+                        <span class="fa fa-thumbs-o-up"></span>
+                        赞：0
+                    </a>
+                    <a href="/" class="text-interaction">
+                        <span class="fa fa-thumbs-o-down"></span>
+                        踩：0
+                    </a>
+                </div>
+            </div>
+            <nav id="nav-page" aria-label="Page navigation example" style="height:auto;">
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                    <li class="page-item"><a class="page-link" href="#">6</a></li>
+                    <li class="page-item"><a class="page-link" href="#">7</a></li>
+                    <li class="page-item"><a class="page-link" href="#">8</a></li>
+                    <li class="page-item"><a class="page-link" href="#">9</a></li>
+                    <li class="page-item"><a class="page-link" href="#">10</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <aside class="col-md-4 content-right" style="background-color:ivory">
+            <div class="widgt clearfix" name="关键字" id="aside-first" style="">
+                <div style="font-size:24px;">
+                    <span class="fa fa-tags"></span>
+                    关键字
+                </div>
+                <hr />
+                <div class="user-tags">
+                    <a href="/">
+                        <span class="badge" style="font-size:21px; background-color:rgba(51, 51, 51, 0.96875)">编程开发语言</span>
+                    </a>
+                    <a href="/">
+                        <span class="badge" style="font-size:20.5px; background-color:rgba(51, 51, 51, 0.9375)">C#</span>
+                    </a>
+                    <a href="/">
+                        <span class="badge" style="font-size: 20px; background-color: rgba(51, 51, 51, 0.90625)">JAVA</span>
+                    </a>
+                    <a href="/">
+                        <span class="badge" style="font-size:19.5px; background-color:rgba(51, 51, 51, 0.875)">工具软件</span>
+                    </a>
+                    <a href="/">
+                        <span class="badge" style="font-size:19px; background-color:rgba(51, 51, 51, 0.84375)">Javascript</span>
+                    </a>
+                    <a href="/">
+                        <span class="badge" style="font-size: 18.5px; background-color: rgba(51, 51, 51, 0.8125)">顾问咨询</span>
+                    </a>
+                    <a href="/">
+                        <span class="badge" style="font-size: 18px; background-color: rgba(51, 51, 51, 0.78125)">html</span>
+                    </a>
+                    <a href="/">
+                        <span class="badge" style="font-size: 17.5px; background-color: rgba(51, 51, 51, 0.75)">VisualStudio</span>
+                    </a>
+                    <a href="/">
+                        <span class="badge" style="font-size: 17px; background-color: rgba(51, 51, 51, 0.71875)">操作系统</span>
+                    </a>
+                    <a href="/">
+                        <span class="badge" style="font-size: 16.5px; background-color: rgba(51, 51, 51, 0.6875)">职场</span>
+                    </a>
+                    <a href="/">
+                        <span class="badge" style="font-size: 16px; background-color: rgba(51, 51, 51, 0.65625)">Python</span>
+                    </a>
+                    <a href="/">
+                        <span class="badge" style="font-size: 15.5px; background-color: rgba(51, 51, 51, 0.625)">法律</span>
+                    </a>
+                    <a href="/">
+                        <span class="badge" style="font-size: 15px; background-color: rgba(51, 51, 51, 0.59375)">SQL</span>
+                    </a>
+                    <a href="/">
+                        <span class="badge" style="font-size: 14.5px; background-color: rgba(51, 51, 51, 0.5625)">.net</span>
+                    </a>
+                    <a href="/">
+                        <span class="badge" style="font-size: 14px; background-color: rgba(51, 51, 51, 0.53125)">CSS</span>
+                    </a>
+                    <a href="/">
+                        <span class="badge" style="style=" font-size:13.5px; background-color:rgba(51, 51, 51, 0.5)"">Lunix</span>
+                    </a>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-sm-8" style="">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="直接输入关键字查找" />
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button">
+                                    <span class="fa fa-search"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4" style="margin-left:0px;">
+                        <a href="" class="btn btn-default" style="white-space:nowrap; border:1px solid #ccc;">
+                            <span class="fa fa-random"></span>
+                            <span>换一批</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="aside-second" style="width:100%; margin:20px 0px;">
+
+                <ul class="container radio-change" style="display:flex;padding:0px;height:50px;line-height:50px;">
+                    <li class="col-4">
+                        <a href="/Article/article2.html">
+                            <span class="fa fa-eye"></span>
+                            <input type="radio" name="select-scan" id="supervise" />每日督促
+                            <label class="simulate-border" for="supervise"></label>
+                        </a>
+                    </li>
+                    <li class="col-4">
+                        <a href="/Article/article2.html" style="color:red;">
+                            <span class="fa fa-heart"></span>
+                            <input type="radio" name="select-scan" id="rank" />排行榜
+                            <label class="simulate-border" for="rank"></label>
+                        </a>
+                    </li>
+                    <li class="col-4">
+                        <a href="/Article/article2.html">
+                            <span class="fa fa-user-circle-o"></span>
+                            <input type="radio" name="select-scan" id="newcomer" />新注册
+                            <label class="simulate-border" for="newcomer"></label>
+                        </a>
+                    </li>
+                </ul>
+                <div class="rank-menber">
+                    <table>
+                        <tr>
+                            <td><span class="rank-num">1</span></td>
+                            <td><a href="/xxx">知名跳伞体验家</a></td>
+                            <td>30</td>
+                        </tr>
+                        <tr>
+                            <td><span class="rank-num">2</span></td>
+                            <td><a href="/xxx">叶飞</a></td>
+                            <td>27</td>
+                        </tr>
+                        <tr>
+                            <td><span class="rank-num">3</span></td>
+                            <td><a href="/xxx">nidele</a></td>
+                            <td>24</td>
+                        </tr>
+                        <tr>
+                            <td><span class="rank-num">4</span></td>
+                            <td><a href="/xxx">Zoulily2</a></td>
+                            <td>30</td>
+                        </tr>
+                        <tr>
+                            <td><span class="rank-num">5</span></td>
+                            <td><a href="/xxx">源潮</a></td>
+                            <td>30</td>
+                        </tr>
+                        <tr>
+                            <td><span class="rank-num">6</span></td>
+                            <td><a href="/xxx">道靖原兴</a></td>
+                            <td>30</td>
+                        </tr>
+                        <tr>
+                            <td><span class="rank-num">7</span></td>
+                            <td><a href="/xxx">喵了个咪</a></td>
+                            <td>30</td>
+                        </tr>
+                        <tr>
+                            <td><span class="rank-num">8</span></td>
+                            <td><a href="/xxx">李慢慢</a></td>
+                            <td>30</td>
+                        </tr>
+                    </table>
+                </div>
+                <div style="padding:10px 10px;">
+                    <a href="/Article/article2.html" class="pull-right">
+                        <span class="fa fa-hand-o-right"></span>
+                        我的排名
+                    </a>
+                    <div style="clear:right;"><!--在浮动元素的父元素闭合前添加一个clear:both，解决子元素浮动后，撑开父元素高度的问题。--></div>
+                </div>
+            </div>
+
+            <div id="aside-third" class="rank-menber">
+                <table>
+                    <tr>
+                        <td><span class="rank-num">1</span></td>
+                        <td><a href="/Article/article2.html">免费广告位，抢到就是赚到！</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-num">2</span></td>
+                        <td><a href="/Article/article2.html">免费广告位，抢到就是赚到！</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-num">3</span></td>
+                        <td><a href="/Article/article2.html">免费广告位，抢到就是赚到！</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-num">4</span></td>
+                        <td><a href="/Article/article2.html">免费广告位，抢到就是赚到！</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-num">5</span></td>
+                        <td><a href="/Article/article2.html">免费广告位，抢到就是赚到！</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-num">6</span></td>
+                        <td>本站主机由<a href="/Article/article2.html" style="padding:0;">西部数码</a>提供</td>
+                    </tr>
+                </table>
+
+            </div>
+        </aside>
+        <div style="clear:both;"><!--在浮动元素的父元素闭合前添加一个clear:both，解决子元素浮动后，撑开父元素高度的问题。--></div>
+    </main>
+    <hr />
+    <footer>
+        <div id="communicate">
+            <a href="/xx">关于我们</a>|
+            <a href="/xx">源栈课堂</a>|
+            <a href="/xx">常见问题</a>|
+            <a href="/xx">意见建议</a>|
+            <a href="/xx">历史通知</a>|
+            <a href="/xx" style="color:gray;">友情捐赠</a>|
+            <a href="/xx" style="color:gray;">诚邀合伙人</a>
+        </div>
+        <div class="pull-right">
+            <a href="http://www.miitbeian.gov.cn">渝ICP备18007191号（备案）</a>
+            <a>© 2021 - 自由</a>
+            <img src="../images/freeflying.ico" />
+        </div>
+    </footer>
+</body>
+</html>
