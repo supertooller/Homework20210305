@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width; initial-scale=1; shrink-to-fit=no" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <!--<link rel="shortcut icon" type="image/x-icon" href="/images/logo-big.ico" media="screen" /> -->
+    <link rel="stylesheet" href="/css/font-awesome.css" />
+
+    <style>
+        .label-bold {
+            font-weight:bold;
+            margin-bottom:5px;
+        }
+    </style>
+</head>
+<body>
+    <div style="width:500px; padding:20px;">
+        <h2><span class="fa fa-user-circle-o"></span>个人资料</h2>
+        <form action="/Profile/Write2.html" method="post" style="width:100%;">
+            <div name="user-avatar" style="width:150px; height:150px;">
+                <img src="../images/人员.png" style="width:100%;"/>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="页面提交时上传文件" />
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button">浏览</button>
+                </div>
+            </div>
+        </form>
+
+
+        <form action="/Profile/Write2.html" method="post">
+            <div class="form-group">
+                <label class="label-bold">性别：</label>
+                <label class="" style="margin-right:20px;">
+                    <input type="radio" name="isfemale" />男
+                </label>
+                <label class="">
+                    <input type="radio" name="isfemale" />女
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="label-bold">生日：</label><br />
+                <div class="input-group">
+                    <select class="form-control">
+                        <option>---</option>
+                        <option>2010</option>
+                        <option>2009</option>
+                        <option>2008</option>
+                        <option>2007</option>
+                        <option>2006</option>
+                        <option>2005</option>
+                        <option>2004</option>
+                        <option>2003</option>
+                        <option>2002</option>
+                        <option>2001</option>
+                        <option>2000</option>
+                        <option>1999</option>
+                        <option>1998</option>
+                        <option>1997</option>
+                        <option>1996</option>
+                        <option>1995</option>
+                        <option>1994</option>
+                        <option>1993</option>
+                        <option>1992</option>
+                        <option>1991</option>
+                        <option>1990</option>
+                    </select>
+                    <span class="input-group-text">年</span>
+                    <select class="form-control">
+                        <option>---</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                    </select>
+                    <span class="input-group-text">月</span>
+                    <select class="form-control">
+                        <option>---</option>
+                        <option>白羊座</option>
+                        <option>金牛座</option>
+                        <option>双子座</option>
+                        <option>巨蟹座</option>
+                        <option>狮子座</option>
+                        <option>处女座</option>
+                        <option>天秤座</option>
+                        <option>天蝎座</option>
+                        <option>射手座</option>
+                        <option>摩羯座</option>
+                        <option>水瓶座</option>
+                        <option>双鱼座</option>
+                    </select>
+                    <div class="input-group-append">
+                        <span class="input-group-text">星座</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="label-bold">关键字：（* 使用空格分隔）</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="---一级---" />
+                    <div class="input-group-append">
+                        <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split">
+                            <span class="sr-only"></span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">编程开发语言</a>
+                            <a class="dropdown-item" href="#">工具软件</a>
+                            <a class="dropdown-item" href="#">顾问咨询</a>
+                            <a class="dropdown-item" href="#">操作系统</a>
+                        </div>
+                    </div>
+                    <input type="text" class="form-control" placeholder="---二级---" />
+                    <div class="input-group-append">
+                        <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split">
+                            <span class="sr-only"></span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">C#</a>
+                            <a class="dropdown-item" href="#">JAVA</a>
+                            <a class="dropdown-item" href="#">Javas</a>
+                            <a class="dropdown-item" href="#">HTML</a>
+                        </div>
+                    </div>
+                    <input type="text" class="input-group-text" placeholder="自定义关键字，使用空格分隔" style="background-color:white; border-top-left-radius:0px; border-bottom-left-radius:0px;"/><!--style="border-top-right-radius:5px ; border-bottom-right-radius:5px;"-->
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="label-bold">自我介绍：</label>
+                <br />
+                <textarea rows="5" style="width:60%; border-radius:5px; border-color:lightgray; margin-top:10px;" placeholder="简单的介绍一下自己吧，不超过255字"></textarea>
+            </div>
+            <div name="submit">
+                <button type="button" class="btn btn-primary ">提交</button>
+            </div>
+        </form>
+    </div>
+
+    <div style="height:100px;">
+
+    </div>
+</body>
+</html>
